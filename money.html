@@ -11,8 +11,47 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Ovo&display=swap" rel="stylesheet">
+    
+    <!-- Add better mobile video support -->
+    <style>
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 0.5rem;
+        }
+        
+        /* Improved modal styles for mobile */
+        #videoModal .modal-content {
+            width: 95%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Ensure modal is scrollable on small screens */
+        @media (max-width: 640px) {
+            #videoModal, #imageModal {
+                overflow-y: auto;
+                padding: 1rem;
+            }
+            
+            #videoModal .modal-content {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body class="overflow-x-hidden font-Outfit leading- dark:bg-black">
+    <!-- Rest of the header and navigation code remains unchanged -->
     <div class="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%]">
         <img src="./images/header-bg-color.png" alt="" class="w-full">
     </div>
@@ -187,35 +226,39 @@
             The creation of videos and the high-fidelity mockup happened simultaneously.
         </p>
 
-        <div class="flex justify-center aspect-video max-w-2xl mx-auto">
+        <!-- Improved video container with proper mobile support -->
+        <div class="video-container">
             <iframe 
-                class="w-full h-full rounded-lg shadow-lg" 
                 src="https://www.youtube.com/embed/p-b1lDIq07A" 
+                title="Vyond Studio Process"
                 frameborder="0" 
-                allow="autoplay; encrypted-media; loop" 
-                allowfullscreen>
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen
+                loading="lazy">
             </iframe>
         </div>
 
         <p class="text-lg text-gray-700 font-light leading-relaxed">
             Once the high-fidelity mockup and videos were completed, I downloaded all the videos and began production in Storyline. 
             The project became quite extensive, offering learners autonomy as they progressed through the experience. 
-            Here’s a demonstration of how the final project looked in Storyline.
+            Here's a demonstration of how the final project looked in Storyline.
         </p>
 
-        <div class="flex justify-center aspect-video max-w-2xl mx-auto">
+        <!-- Improved video container with proper mobile support -->
+        <div class="video-container">
             <iframe 
-                class="w-full h-full rounded-lg shadow-lg" 
                 src="https://www.youtube.com/embed/1-7ZTWh1Ifs" 
+                title="Storyline Development Process"
                 frameborder="0" 
-                allow="autoplay; encrypted-media; loop" 
-                allowfullscreen>
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen
+                loading="lazy">
             </iframe>
         </div>
 
         <p class="text-lg text-gray-700 font-light leading-relaxed">
-            If you’re looking for an instructional designer who can craft engaging and visually appealing learning experiences, 
-            let’s connect! I’d love to hear from you.
+            If you're looking for an instructional designer who can craft engaging and visually appealing learning experiences, 
+            let's connect! I'd love to hear from you.
         </p>
     </div>
 
@@ -257,33 +300,153 @@
         </ul>
     </div>
 </div>
-<!-- Modal -->
-    <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center pt-20 hidden">
-        <div class="relative bg-white p-4 rounded-lg shadow-lg">
-            <button id="closeModal" class="absolute top-2 right-2 text-gray-600 text-xl">&times;</button>
-            <img id="modalImage" src="" class="max-w-full max-h-[80vh] rounded-md">
-        </div>
-    </div>    
+
+<!-- Image Modal -->
+<div id="imageModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+    <div class="relative bg-white p-4 rounded-lg shadow-lg w-full max-w-3xl mx-4">
+        <button id="closeModal" class="absolute top-2 right-2 text-gray-600 text-xl z-10 bg-white rounded-full w-8 h-8 flex items-center justify-center">&times;</button>
+        <img id="modalImage" src="" class="max-w-full max-h-[80vh] mx-auto rounded-md">
+    </div>
+</div>
+
 <!-- Video Modal -->
 <div id="videoModal" class="hidden fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50">
-    <div class="relative bg-white rounded-lg p-4 max-w-4xl w-full">
-        <button id="closeVideoModal" class="absolute top-2 right-2 text-gray-500 hover:text-black">
+    <div class="relative bg-white rounded-lg p-4 w-full mx-4 sm:mx-8 max-w-4xl modal-content">
+        <button id="closeVideoModal" class="absolute top-2 right-2 text-gray-500 hover:text-black bg-white rounded-full w-8 h-8 flex items-center justify-center z-10">
             ✕
         </button>
-        <!-- Responsive Aspect Ratio Wrapper -->
-        <div class="relative" style="padding-top: 56.25%; position: relative; width: 100%;">
+        <!-- Improved video container -->
+        <div class="video-container">
             <iframe 
                 id="modalVideo" 
-                class="absolute top-0 left-0 w-full h-full" 
                 frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                 allowfullscreen>
             </iframe>
         </div>
     </div>
 </div>
 
+<!-- Updated script with improved mobile handling -->
+<script>
+// Side menu functions
+function openMenu() {
+    document.getElementById('sideMenu').style.right = '0';
+}
+function closeMenu() {
+    document.getElementById('sideMenu').style.right = '-16rem';
+}
 
+// Image Modal
+const imageModal = document.getElementById('imageModal');
+const modalImage = document.getElementById('modalImage');
+const closeModal = document.getElementById('closeModal');
+const imageTriggers = document.querySelectorAll('.imageTrigger');
 
-<script src="./script.js"></script>
+imageTriggers.forEach(trigger => {
+    trigger.addEventListener('click', function(e) {
+        e.preventDefault();
+        modalImage.src = this.getAttribute('href');
+        imageModal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    });
+});
+
+closeModal.addEventListener('click', function() {
+    imageModal.classList.add('hidden');
+    document.body.style.overflow = 'auto'; // Re-enable scrolling
+});
+
+// Video Modal
+const videoModal = document.getElementById('videoModal');
+const modalVideo = document.getElementById('modalVideo');
+const closeVideoModal = document.getElementById('closeVideoModal');
+const videoTriggers = document.querySelectorAll('.videoTrigger');
+
+videoTriggers.forEach(trigger => {
+    trigger.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const videoUrl = this.getAttribute('href');
+        // Extract YouTube video ID
+        const videoId = videoUrl.includes('youtube.com/watch?v=') 
+            ? videoUrl.split('v=')[1].split('&')[0]
+            : videoUrl.includes('youtu.be/') 
+                ? videoUrl.split('youtu.be/')[1].split('?')[0] 
+                : '';
+                
+        if (videoId) {
+            modalVideo.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+            videoModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            
+            // Force reflow to ensure video loads properly on mobile
+            videoModal.offsetHeight;
+        }
+    });
+});
+
+closeVideoModal.addEventListener('click', function() {
+    modalVideo.src = '';
+    videoModal.classList.add('hidden');
+    document.body.style.overflow = 'auto'; // Re-enable scrolling
+});
+
+// Close modals when clicking outside of content
+imageModal.addEventListener('click', function(e) {
+    if (e.target === imageModal) {
+        imageModal.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+    }
+});
+
+videoModal.addEventListener('click', function(e) {
+    if (e.target === videoModal) {
+        modalVideo.src = '';
+        videoModal.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+    }
+});
+
+// Handle touch events for mobile
+imageModal.addEventListener('touchstart', function(e) {
+    if (e.target === imageModal) {
+        imageModal.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+    }
+});
+
+videoModal.addEventListener('touchstart', function(e) {
+    if (e.target === videoModal) {
+        modalVideo.src = '';
+        videoModal.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+    }
+});
+
+// Add event listener for the Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        if (!imageModal.classList.contains('hidden')) {
+            imageModal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+        if (!videoModal.classList.contains('hidden')) {
+            modalVideo.src = '';
+            videoModal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+    }
+});
+
+// Check if the device is iOS to apply specific fixes
+const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+if (isIOS) {
+    // Apply iOS-specific fixes if needed
+    document.querySelectorAll('.video-container iframe').forEach(iframe => {
+        iframe.setAttribute('playsinline', '');
+    });
+}
+</script>
 </body>
 </html>
