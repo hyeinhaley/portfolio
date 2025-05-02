@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Ovo&display=swap" rel="stylesheet">
     
-    <!-- Enhanced mobile video support with iOS fixes -->
+    <!-- Add better mobile video support -->
     <style>
         .video-container {
             position: relative;
@@ -20,10 +20,8 @@
             padding-bottom: 56.25%; /* 16:9 aspect ratio */
             height: 0;
             overflow: hidden;
-            background-color: #f2f2f2; /* Light background while loading */
         }
-        .video-container iframe, 
-        .video-container video {
+        .video-container iframe {
             position: absolute;
             top: 0;
             left: 0;
@@ -32,34 +30,11 @@
             border-radius: 0.5rem;
         }
         
-        /* iOS specific fixes */
-        @supports (-webkit-touch-callout: none) {
-            .video-container {
-                -webkit-overflow-scrolling: touch;
-            }
-            .video-container iframe {
-                /* Fix for iOS iframe issues */
-                width: 100% !important;
-                height: 100% !important;
-            }
-        }
-        
         /* Improved modal styles for mobile */
         #videoModal .modal-content {
             width: 95%;
             max-width: 800px;
             margin: 0 auto;
-            -webkit-overflow-scrolling: touch;
-        }
-        
-        /* Video fallback for iOS */
-        .video-fallback {
-            display: none;
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
-            border-radius: 0.5rem;
-            cursor: pointer;
         }
         
         /* Ensure modal is scrollable on small screens */
@@ -67,7 +42,6 @@
             #videoModal, #imageModal {
                 overflow-y: auto;
                 padding: 1rem;
-                -webkit-overflow-scrolling: touch;
             }
             
             #videoModal .modal-content {
@@ -222,7 +196,7 @@
                 <p class="text-sm text-gray-600 leading-5">I created a text-based storyboard after brainstorming thoroughly with pen and paper.</p>
             </div>
         </a>
-        <a href="https://www.youtube.com/watch?v=9e-b0jstPUA" class="videoTrigger">
+        <a href="./images/lowfid.png" class="imageTrigger">
             <div class="border border-gray-400 rounded-lg px-8 py-12 
             hover:shadow-[4px_4px_0_#000] cursor-pointer hover:bg-[#fcf4ff] hover:-translate-y-1 duration-500">
                 <img src="./images/lowFig.png" alt="" class="w-8">
@@ -230,7 +204,7 @@
                 <p class="text-sm text-gray-600 leading-5">I started out with a low-fidelity mockup of my project in Figma, to map out a decision tree.</p>
             </div>
         </a>
-        <a href="https://www.youtube.com/watch?v=sUGmqbbw2xw" class="videoTrigger">
+        <a href="./images/highFid.png" class="imageTrigger">
             <div class="border border-gray-400 rounded-lg px-8 py-12 
             hover:shadow-[4px_4px_0_#000] cursor-pointer hover:bg-[#fcf4ff] hover:-translate-y-1 duration-500">
                 <img src="./images/figma.png" alt="" class="w-8">
@@ -252,31 +226,7 @@
             The creation of videos and the high-fidelity mockup happened simultaneously.
         </p>
 
-        <!-- Video container with iOS compatibility -->
-        <div class="video-container" id="video1Container">
-            <!-- Direct YouTube link as fallback -->
-            <a href="https://www.youtube.com/watch?v=p-b1lDIq07A" class="video-fallback ios-only" target="_blank">
-                <img src="./images/video-thumbnail1.jpg" alt="Vyond Studio Process - Click to watch on YouTube" class="w-full h-full object-cover rounded-lg">
-                <div class="absolute inset-0 flex items-center justify-center">
-                    <div class="bg-black bg-opacity-50 rounded-full p-4">
-                        <img src="./images/play-icon.png" alt="Play" class="w-10 h-10" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgY2xhc3M9ImZlYXRoZXIgZmVhdGhlci1wbGF5Ij48cG9seWdvbiBwb2ludHM9IjUgMyAxOSAxMiA1IDIxIDUgMyI+PC9wb2x5Z29uPjwvc3ZnPg=='">
-                    </div>
-                </div>
-            </a>
-            
-            <!-- Standard iframe embed that works on most devices -->
-            <iframe 
-                id="video1Frame"
-                class="non-ios"
-                src="https://www.youtube.com/embed/p-b1lDIq07A" 
-                title="Vyond Studio Process"
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                allowfullscreen
-                playsinline
-                webkit-playsinline>
-            </iframe>
-        </div>
+        <img src="./images/vyondDemo.png" alt="">
 
         <p class="text-lg text-gray-700 font-light leading-relaxed">
             Once the high-fidelity mockup and videos were completed, I downloaded all the videos and began production in Storyline. 
@@ -284,31 +234,7 @@
             Here's a demonstration of how the final project looked in Storyline.
         </p>
 
-        <!-- Video container with iOS compatibility -->
-        <div class="video-container" id="video2Container">
-            <!-- Direct YouTube link as fallback -->
-            <a href="https://www.youtube.com/watch?v=1-7ZTWh1Ifs" class="video-fallback ios-only" target="_blank">
-                <img src="./images/video-thumbnail2.jpg" alt="Storyline Development Process - Click to watch on YouTube" class="w-full h-full object-cover rounded-lg">
-                <div class="absolute inset-0 flex items-center justify-center">
-                    <div class="bg-black bg-opacity-50 rounded-full p-4">
-                        <img src="./images/play-icon.png" alt="Play" class="w-10 h-10" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgY2xhc3M9ImZlYXRoZXIgZmVhdGhlci1wbGF5Ij48cG9seWdvbiBwb2ludHM9IjUgMyAxOSAxMiA1IDIxIDUgMyI+PC9wb2x5Z29uPjwvc3ZnPg=='">
-                    </div>
-                </div>
-            </a>
-            
-            <!-- Standard iframe embed that works on most devices -->
-            <iframe 
-                id="video2Frame"
-                class="non-ios"
-                src="https://www.youtube.com/embed/1-7ZTWh1Ifs" 
-                title="Storyline Development Process"
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                allowfullscreen
-                playsinline
-                webkit-playsinline>
-            </iframe>
-        </div>
+        <img src="./images/storylineDemo.png" alt="">
 
         <p class="text-lg text-gray-700 font-light leading-relaxed">
             If you're looking for an instructional designer who can craft engaging and visually appealing learning experiences, 
