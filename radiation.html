@@ -11,30 +11,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Ovo&display=swap" rel="stylesheet">
-    
-    <!-- Add minimal styles just for video fixes -->
-    <style>
-        /* Fix for mobile YouTube video display */
-        iframe {
-            max-width: 100%;
-            border-radius: 0.375rem;
-        }
-        
-        .video-wrapper {
-            position: relative;
-            width: 100%;
-            aspect-ratio: 16/9;
-            margin: 0 auto;
-        }
-        
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-    </style>
 </head>
 <body class="overflow-x-hidden font-Outfit leading- dark:bg-black">
     <div class="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%]">
@@ -97,6 +73,7 @@
     <div class="flex w-full flex-col lg:flex-row items-center gap-10 my-10">
       <div class="max-w-max mx-auto relative">
         <img src="./images/radsafeGame.png" alt="" class="w-64 sm:w-80 rounded-3xl max-w-none gap-5 my-5">
+        <img src="./radSigns.png" alt="" class="w-64 sm:w-80 rounded-3xl max-w-none">
       </div>
       <div class="flex items-center justify-center px-4">
         <div class="flex-1 max-w-5xl w-full">
@@ -134,39 +111,14 @@
       To reinforce mastery, I designed the game with mechanics that simulate real-world uncertainty and encourage repeated practice. Key features include:
       <strong>randomized scenarios</strong> (TI/surface values), <strong>scoring and replayability</strong> to build fluency, and <strong>xAPI tracking</strong> to capture learner actions.
     </p>
-    
-    <!-- Video 1: Using your original styling but with wrapper -->
     <div class="flex justify-center aspect-video max-w-2xl mx-auto">
-      <div class="video-wrapper" style="max-width: 560px;">
-        <iframe width="560" height="315" 
-          src="https://www.youtube.com/embed/mo_BaN1goXw?si=ZA4h5aAspj5lPEQS" 
-          title="YouTube video player" 
-          frameborder="0" 
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-          referrerpolicy="strict-origin-when-cross-origin" 
-          allowfullscreen>
-        </iframe>
-      </div>
+      <img src="./images/pygamee.png" alt="">
     </div>
-
     <p class="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">
       I used Adobe Illustrator to create custom game assets, including visuals of a Geiger counter and radioactive package. I also introduced a tiered difficulty system (Easy, Medium, Hard) to promote progressive mastery. The design was inspired by gamification strategist <em>Marie-Jo Leroux</em>, whose framework emphasizes aligning mechanics with instructional goals.
     </p>
-    
-    <!-- Video 2: Using your original styling but with wrapper -->
     <div class="flex justify-center aspect-video max-w-2xl mx-auto mt-12">
-      <div class="video-wrapper" style="max-width: 560px;">
-        <iframe width="560" height="315" 
-          src="https://www.youtube.com/embed/-CxfAb7PNM8?si=dlDMb_9f-T2YEx9G" 
-          title="YouTube video player" 
-          frameborder="0" 
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-          referrerpolicy="strict-origin-when-cross-origin" 
-          allowfullscreen>
-        </iframe>
-      </div>
+      <img src="./images/adobeDemo.png" alt="">
     </div>
   </div>
   
@@ -175,24 +127,11 @@
     <h4 class="text-center text-lg font-Ovo text-gray-700 uppercase tracking-wide">Development</h4>
     <h2 class="text-center text-5xl font-Ovo font-bold text-gray-900 mb-8">Fully Developed in 2 Weeks With...</h2>
     <p class="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">
-      To accelerate development, I adapted a pre-built game from Clear Code's Pygame tutorial and customized it to meet instructional goals. I used prompt engineering techniques to collaborate with AI tools like ChatGPT and Claude, iterating rapidly through coding challenges.
+      To accelerate development, I adapted a pre-built game from Clear Code’s Pygame tutorial and customized it to meet instructional goals. I used prompt engineering techniques to collaborate with AI tools like ChatGPT and Claude, iterating rapidly through coding challenges.
     </p>
-    
-    <!-- Video 3: Using your original styling but with wrapper -->
     <div class="flex justify-center aspect-video max-w-2xl mx-auto mt-12">
-      <div class="video-wrapper" style="max-width: 560px;">
-        <iframe width="560" height="315" 
-          src="https://www.youtube.com/embed/kE2iNqkH_VE?si=UlMdFeba2OhOLhOx" 
-          title="YouTube video player" 
-          frameborder="0" 
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-          referrerpolicy="strict-origin-when-cross-origin" 
-          allowfullscreen>
-        </iframe>
-      </div>
+      <img src="./images/aiPrompting.png" alt="">
     </div>
-
     <p class="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">
       This project significantly deepened my fluency in debugging, logic flow, user input, and Python game deployment. When ChatGPT struggled to resolve a gameplay reset issue, I pivoted to Claude, whose interface proved more efficient for solving that problem. This experience sharpened my technical problem-solving skills and boosted confidence working with AI tools in development workflows.
     </p>
@@ -203,7 +142,7 @@
     <h4 class="text-center text-lg font-Ovo text-gray-700 uppercase tracking-wide">Evaluation</h4>
     <h2 class="text-center text-5xl font-Ovo font-bold text-gray-900 mb-8">xAPI Tracking for Learner Data</h2>
     <div class="flex justify-center aspect-video max-w-2xl mx-auto">
-      <img src="./images/xAPI.png" alt="photo of xAPI tracking system on Veracity Learning Management System" class="w-full rounded-lg">
+      <img src="./images/xAPI.png" alt="photo of xAPI tracking system on Veracity Learning Management System">
     </div>
     <div class="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">
         <p>
@@ -223,24 +162,11 @@
           I plan to deploy the game to a network of Nuclear Medicine professionals and delivery drivers, then assess engagement and learning performance using these metrics.
         </p>
       </div>      
-      
-    <!-- Video 4: Using your original styling but with wrapper -->
     <div class="flex justify-center aspect-video max-w-2xl mx-auto">
-      <div class="video-wrapper" style="max-width: 560px;">
-        <iframe width="560" height="315" 
-          src="https://www.youtube.com/embed/qmjPC2ZvNz4?si=d6IfmsYj_duARm9G" 
-          title="YouTube video player" 
-          frameborder="0" 
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-          referrerpolicy="strict-origin-when-cross-origin" 
-          allowfullscreen>
-        </iframe>
-      </div>
+      <img src="./images/gameScreen.png" alt="">
     </div>
-
     <p class="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">
-      If you're seeking an instructional designer with technical fluency and subject matter expertise—who builds meaningful, AI-enhanced learning experiences—let's connect.
+      If you’re seeking an instructional designer with technical fluency and subject matter expertise—who builds meaningful, AI-enhanced learning experiences—let’s connect.
     </p>
   </div>
   
@@ -291,12 +217,12 @@
     </div>    
 <!-- Video Modal -->
 <div id="videoModal" class="hidden fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50">
-    <div class="relative bg-white rounded-lg p-4 max-w-4xl w-full mx-4">
-        <button id="closeVideoModal" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">
+    <div class="relative bg-white rounded-lg p-4 max-w-4xl w-full">
+        <button id="closeVideoModal" class="absolute top-2 right-2 text-gray-500 hover:text-black">
             ✕
         </button>
         <!-- Responsive Aspect Ratio Wrapper -->
-        <div class="relative" style="padding-top: 56.25%;">
+        <div class="relative" style="padding-top: 56.25%; position: relative; width: 100%;">
             <iframe 
                 id="modalVideo" 
                 class="absolute top-0 left-0 w-full h-full" 
@@ -307,79 +233,8 @@
     </div>
 </div>
 
-<script>
-// Basic menu functionality
-function openMenu() {
-    document.getElementById('sideMenu').style.right = '0';
-}
 
-function closeMenu() {
-    document.getElementById('sideMenu').style.right = '-16rem';
-}
 
-// Simple JS fix for YouTube iframe loading issues on mobile
-document.addEventListener("DOMContentLoaded", function() {
-    // Check for YouTube loading issues
-    const iframes = document.querySelectorAll('iframe[src*="youtube.com"]');
-    
-    // Add a small fix to force proper sizing on mobile
-    iframes.forEach(iframe => {
-        iframe.addEventListener('load', function() {
-            // Just making sure iframe fully loads
-            this.style.display = 'block';
-        });
-    });
-    
-    // Image modal functionality (original functionality)
-    const images = document.querySelectorAll('img:not([class*="w-6"], [class*="w-7"], [class*="w-8"], [class*="w-5"], [class*="w-28"], [class*="w-36"])');
-    const imageModal = document.getElementById('imageModal');
-    const modalImage = document.getElementById('modalImage');
-    const closeModal = document.getElementById('closeModal');
-    
-    if (images && imageModal && modalImage && closeModal) {
-        images.forEach(img => {
-            img.classList.add('cursor-pointer');
-            img.addEventListener('click', function() {
-                modalImage.src = this.src;
-                imageModal.classList.remove('hidden');
-            });
-        });
-        
-        closeModal.addEventListener('click', function() {
-            imageModal.classList.add('hidden');
-        });
-        
-        imageModal.addEventListener('click', function(e) {
-            if (e.target === imageModal) {
-                imageModal.classList.add('hidden');
-            }
-        });
-    }
-    
-    // Video modal (original functionality)
-    const videoModal = document.getElementById('videoModal');
-    const modalVideo = document.getElementById('modalVideo');
-    const closeVideoModal = document.getElementById('closeVideoModal');
-    
-    if (videoModal && modalVideo && closeVideoModal) {
-        window.openVideoModal = function(videoId) {
-            modalVideo.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-            videoModal.classList.remove('hidden');
-        };
-        
-        closeVideoModal.addEventListener('click', function() {
-            modalVideo.src = '';
-            videoModal.classList.add('hidden');
-        });
-        
-        videoModal.addEventListener('click', function(e) {
-            if (e.target === videoModal) {
-                modalVideo.src = '';
-                videoModal.classList.add('hidden');
-            }
-        });
-    }
-});
-</script>
+<script src="./script.js"></script>
 </body>
 </html>
