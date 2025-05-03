@@ -12,45 +12,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Ovo&display=swap" rel="stylesheet">
     
-    <!-- Add better mobile video support -->
+    <!-- Improved modal styles for mobile -->
     <style>
-        .video-container {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            height: 0;
-            overflow: hidden;
-        }
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: 0.5rem;
-        }
-        
-        /* Improved modal styles for mobile */
-        #videoModal .modal-content {
-            width: 95%;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
         /* Ensure modal is scrollable on small screens */
         @media (max-width: 640px) {
-            #videoModal, #imageModal {
+            #imageModal {
                 overflow-y: auto;
                 padding: 1rem;
-            }
-            
-            #videoModal .modal-content {
-                width: 100%;
             }
         }
     </style>
 </head>
-<body class="overflow-x-hidden font-Outfit leading- dark:bg-black">
+<body class="overflow-x-hidden font-Outfit leading-">
     <!-- Rest of the header and navigation code remains unchanged -->
     <div class="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%]">
         <img src="./images/header-bg-color.png" alt="" class="w-full">
@@ -223,15 +196,15 @@
 
     <div class="max-w-3xl mx-auto text-center space-y-8">
         <p class="text-lg text-gray-700 font-light leading-relaxed">
-            Once I had my low-fidelity mockup, I began creating visuals and videos on Vyond Studio. 
+            Once I had my low-fidelity mockup, I began creating visuals and images on Vyond Studio. 
             After setting my color theme and finalizing a few scenes, I moved on to creating a high-fidelity mockup. 
-            The creation of videos and the high-fidelity mockup happened simultaneously.
+            The creation of visuals and the high-fidelity mockup happened simultaneously.
         </p>
 
         <img src="./images/vyondDemo.png" alt="">
 
         <p class="text-lg text-gray-700 font-light leading-relaxed">
-            Once the high-fidelity mockup and videos were completed, I downloaded all the videos and began production in Storyline. 
+            Once the high-fidelity mockup and visual elements were completed, I downloaded all the assets and began production in Storyline. 
             The project became quite extensive, offering learners autonomy as they progressed through the experience. 
             Here's a demonstration of how the final project looked in Storyline.
         </p>
@@ -247,7 +220,7 @@
     <div class="max-w-3xl mx-auto text-center space-y-8">
         <p class="text-lg text-gray-700 font-light leading-relaxed text-center">
             I've been hard at work revising my Compound Interest Learning Experience, built with Articulate Storyline, to take it to the next level.
-            Here’s what’s coming:
+            Here's what's coming:
           </p>
           <ol class="list-decimal list-inside mt-3 text-sm sm:text-base font-light text-left max-w-2xl mx-auto">
             <li>Advanced Storyline interactions using text and number variables</li>
@@ -316,25 +289,7 @@
     </div>
 </div>
 
-<!-- Video Modal -->
-<div id="videoModal" class="hidden fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50">
-    <div class="relative bg-white rounded-lg p-4 w-full mx-4 sm:mx-8 max-w-4xl modal-content">
-        <button id="closeVideoModal" class="absolute top-2 right-2 text-gray-500 hover:text-black bg-white rounded-full w-8 h-8 flex items-center justify-center z-10">
-            ✕
-        </button>
-        <!-- Improved video container -->
-        <div class="video-container">
-            <iframe 
-                id="modalVideo" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                allowfullscreen>
-            </iframe>
-        </div>
-    </div>
-</div>
-
-<!-- Updated script with improved mobile handling -->
+<!-- Script for image modal only -->
 <script>
 // Side menu functions
 function openMenu() {
@@ -364,53 +319,10 @@ closeModal.addEventListener('click', function() {
     document.body.style.overflow = 'auto'; // Re-enable scrolling
 });
 
-// Video Modal
-const videoModal = document.getElementById('videoModal');
-const modalVideo = document.getElementById('modalVideo');
-const closeVideoModal = document.getElementById('closeVideoModal');
-const videoTriggers = document.querySelectorAll('.videoTrigger');
-
-videoTriggers.forEach(trigger => {
-    trigger.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        const videoUrl = this.getAttribute('href');
-        // Extract YouTube video ID
-        const videoId = videoUrl.includes('youtube.com/watch?v=') 
-            ? videoUrl.split('v=')[1].split('&')[0]
-            : videoUrl.includes('youtu.be/') 
-                ? videoUrl.split('youtu.be/')[1].split('?')[0] 
-                : '';
-                
-        if (videoId) {
-            modalVideo.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-            videoModal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
-            
-            // Force reflow to ensure video loads properly on mobile
-            videoModal.offsetHeight;
-        }
-    });
-});
-
-closeVideoModal.addEventListener('click', function() {
-    modalVideo.src = '';
-    videoModal.classList.add('hidden');
-    document.body.style.overflow = 'auto'; // Re-enable scrolling
-});
-
-// Close modals when clicking outside of content
+// Close modal when clicking outside of content
 imageModal.addEventListener('click', function(e) {
     if (e.target === imageModal) {
         imageModal.classList.add('hidden');
-        document.body.style.overflow = 'auto';
-    }
-});
-
-videoModal.addEventListener('click', function(e) {
-    if (e.target === videoModal) {
-        modalVideo.src = '';
-        videoModal.classList.add('hidden');
         document.body.style.overflow = 'auto';
     }
 });
@@ -423,14 +335,6 @@ imageModal.addEventListener('touchstart', function(e) {
     }
 });
 
-videoModal.addEventListener('touchstart', function(e) {
-    if (e.target === videoModal) {
-        modalVideo.src = '';
-        videoModal.classList.add('hidden');
-        document.body.style.overflow = 'auto';
-    }
-});
-
 // Add event listener for the Escape key
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
@@ -438,22 +342,8 @@ document.addEventListener('keydown', function(e) {
             imageModal.classList.add('hidden');
             document.body.style.overflow = 'auto';
         }
-        if (!videoModal.classList.contains('hidden')) {
-            modalVideo.src = '';
-            videoModal.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
     }
 });
-
-// Check if the device is iOS to apply specific fixes
-const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-if (isIOS) {
-    // Apply iOS-specific fixes if needed
-    document.querySelectorAll('.video-container iframe').forEach(iframe => {
-        iframe.setAttribute('playsinline', '');
-    });
-}
 </script>
 </body>
 </html>
