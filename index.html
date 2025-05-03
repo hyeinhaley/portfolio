@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Ovo&display=swap" rel="stylesheet">
 </head>
-<body class="overflow-x-hidden font-Outfit leading- dark:bg-black">
+<body class="overflow-x-hidden font-Outfit leading-">
     <div class="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%]">
         <img src="./images/header-bg-color.png" alt="" class="w-full">
     </div>
@@ -74,7 +74,7 @@
             <div class="flex-1 max-w-5xl w-full">
                 <p class="mb-10 text-base sm:text-lg text-gray-800 font-Ovo">I am an Instructional Designer passionate about creating 
                 impactful learning experiences that offer learners intrinsic motivation to drive business results. 
-                Holding a Master’s degree from the University of Toronto, I specialize in designing engaging, 
+                Holding a Master's degree from the University of Toronto, I specialize in designing engaging, 
                 scenario-based and gamified learning solutions using Articulate Storyline, Rise 360, and Vyond Animation.</p>
 
                 <ul class="grid grid-cols-1 sm:grid-cols-auto gap-6">
@@ -97,7 +97,7 @@
                     hover:shadow-[4px_4px_0_#000]">
                         <img src="./images/project-icon.png" alt="" class="w-7 mt-3 max-w-full">
                         <h3 class="my-4 font-semibold text-gray-700">ID Skills</h3>
-                        <p class="text-gray-600 text-sm"> Articulate Storyline, Rise, Vyond, Figma, Video Editing</p>
+                        <p class="text-gray-600 text-sm"> Articulate Storyline, Rise, Vyond, Figma</p>
                     </li>
                 </ul>
                 <h4 class="my-6 text-gray-700 font-Ovo">Tools I use</h4>
@@ -247,10 +247,17 @@
         </p>
         <ul>
             <li><a href="https://www.linkedin.com/in/haley-lee-montgomery">LinkedIn</a></li>
-            <li><a href="https://www.youtube.com/@hyeinlee864">YouTube</a></li>
         </ul>
     </div>
 </div>
-<script src="./script.js"></script>
+<script>
+function openMenu() {
+    document.getElementById("sideMenu").style.right = "0";
+}
+
+function closeMenu() {
+    document.getElementById("sideMenu").style.right = "-16rem";
+}
+</script>
 </body>
 </html>
